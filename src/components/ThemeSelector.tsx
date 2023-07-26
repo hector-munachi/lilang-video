@@ -1,7 +1,6 @@
 import { EuiThemeColorMode } from "@elastic/eui";
 import React, { Suspense, useEffect, useState } from "react";
 
-// const LightTheme = React.lazy(() => import("./Themes/LightTheme"));
 const DarkTheme = React.lazy(() => import("./Themes/DarkTheme"));
 
 export default function ThemeSelector({
@@ -11,7 +10,7 @@ export default function ThemeSelector({
 }) {
   const [theme, setTheme] = useState<EuiThemeColorMode>("dark");
   useEffect(() => {
-    const theme = localStorage.getItem("zoom-theme");
+    const theme = localStorage.getItem("lilang-theme");
     if (theme) {
       setTheme(theme as EuiThemeColorMode);
     }

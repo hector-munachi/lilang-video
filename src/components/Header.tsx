@@ -103,7 +103,7 @@ export default function Header() {
                 onClick={invertTheme}
                 iconType="sun"
                 size="s"
-                color="warning"
+                color="ghost"
                 aria-label="theme-button-light"
               />
             ) : (
