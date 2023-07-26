@@ -80,8 +80,8 @@ export default function Header() {
         <>
           {userName ? (
             <EuiText>
-              <h3>
-                <EuiTextColor color="white">Hi, </EuiTextColor>
+              <h3 style={{ color: "#B36ED4" }}>
+                Hi,
                 <EuiTextColor color="#B36ED4">{userName}</EuiTextColor>
               </h3>
             </EuiText>
