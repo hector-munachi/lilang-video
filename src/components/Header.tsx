@@ -59,7 +59,7 @@ export default function Header() {
 
   const invertTheme = () => {
     const theme = localStorage.getItem("zoom-theme");
-    localStorage.setItem("zoom-theme", theme === "light" ? "dark" : "light");
+    localStorage.setItem("zoom-theme", theme === "dark" ? "light" : "dark");
     dispatch(changeTheme({ isDarkTheme: !isDarkTheme }));
   };
 
@@ -100,7 +100,7 @@ export default function Header() {
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
               <EuiButtonIcon
                 onClick={invertTheme}
-                iconType={!isDarkTheme ? 'sun' : 'moon'}
+                iconType={isDarkTheme ? 'sun' : 'moon'}
                 size="s"
                 color="ghost"
                 aria-label={isDarkTheme ? 'theme-button-light' : 'theme-button-dark'}
