@@ -1,7 +1,7 @@
 import { EuiThemeColorMode } from "@elastic/eui";
 import React, { Suspense, useEffect, useState } from "react";
 
-const LightTheme = React.lazy(() => import("./Themes/LightTheme"));
+// const LightTheme = React.lazy(() => import("./Themes/LightTheme"));
 const DarkTheme = React.lazy(() => import("./Themes/DarkTheme"));
 
 export default function ThemeSelector({
@@ -9,7 +9,7 @@ export default function ThemeSelector({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<EuiThemeColorMode>("light");
+  const [theme, setTheme] = useState<EuiThemeColorMode>("dark");
   useEffect(() => {
     const theme = localStorage.getItem("zoom-theme");
     if (theme) {
@@ -20,7 +20,7 @@ export default function ThemeSelector({
   return (
     <>
       <Suspense fallback={<></>}>
-        {theme === "dark" ? <DarkTheme /> : <LightTheme />}
+        {theme === "dark" ? <DarkTheme /> : <DarkTheme />}
       </Suspense>
       {children}
     </>
