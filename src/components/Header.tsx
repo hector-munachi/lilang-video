@@ -97,7 +97,7 @@ export default function Header() {
           direction="row"
           style={{ gap: "2vw" }}
         >
-          {/* <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
+          <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
             {isDarkTheme ? (
               <EuiButtonIcon
                 onClick={invertTheme}
@@ -115,7 +115,7 @@ export default function Header() {
                 aria-label="theme-button-dark"
               />
             )}
-          </EuiFlexItem> */}
+          </EuiFlexItem>
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
             <EuiButtonIcon
               onClick={logout}
