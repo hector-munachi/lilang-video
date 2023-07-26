@@ -81,7 +81,7 @@ export default function Header() {
           {userName ? (
             <EuiText>
               <h3>
-                <EuiTextColor color="white">Welcome, </EuiTextColor>
+                <EuiTextColor color="white">Hi, </EuiTextColor>
                 <EuiTextColor color="#B36ED4">{userName}</EuiTextColor>
               </h3>
             </EuiText>
