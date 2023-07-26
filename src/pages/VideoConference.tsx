@@ -113,7 +113,7 @@ export default function VideoConference() {
       <Header />
       <EuiFlexGroup justifyContent="center" alignItems="center">
         <EuiForm>
-          <EuiFormRow display="columnCompressedSwitch" label="Anyone can Join">
+          <EuiFormRow display="columnCompressedSwitch" label="Anyone can Join" >
             <EuiSwitch
               showLabel={false}
               label="Anyone Can Join"

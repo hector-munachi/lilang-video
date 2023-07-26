@@ -87,7 +87,7 @@ export const getMeetingsBreadCrumbs = (
   navigate: NavigateFunction
 ): Array<BreadCrumbsType> => [
   {
-    text: "Dashboard",
+    text: "Menu",
     href: "#",
     onClick: () => {
       navigate("/");

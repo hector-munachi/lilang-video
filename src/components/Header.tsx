@@ -98,23 +98,13 @@ export default function Header() {
           style={{ gap: "2vw" }}
         >
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
-            {isDarkTheme ? (
               <EuiButtonIcon
                 onClick={invertTheme}
-                iconType="sun"
+                iconType={!isDarkTheme ? 'sun' : 'moon'}
                 size="s"
                 color="ghost"
-                aria-label="theme-button-light"
+                aria-label={isDarkTheme ? 'theme-button-light' : 'theme-button-dark'}
               />
-            ) : (
-              <EuiButtonIcon
-                onClick={invertTheme}
-                iconType="moon"
-                size="s"
-                color="ghost"
-                aria-label="theme-button-dark"
-              />
-            )}
           </EuiFlexItem>
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
             <EuiButtonIcon
@@ -141,6 +131,21 @@ export default function Header() {
           </EuiText>
         </Link>,
       ],
+      
+    },
+    {
+      items: [
+        <>
+          {userName ? (
+            <EuiText>
+              <h3>
+                <EuiTextColor color="white">Welcome, </EuiTextColor>
+                <EuiTextColor color="#B36ED4">{userName}</EuiTextColor>
+              </h3>
+            </EuiText>
+          ) : null}
+        </>,
+      ],
     },
     {
       items: [
@@ -151,23 +156,13 @@ export default function Header() {
           style={{ gap: "2vw" }}
         >
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
-            {isDarkTheme ? (
-              <EuiButtonIcon
+          <EuiButtonIcon
                 onClick={invertTheme}
-                iconType="sun"
-                size="s"
-                color="warning"
-                aria-label="theme-button-light"
-              />
-            ) : (
-              <EuiButtonIcon
-                onClick={invertTheme}
-                iconType="moon"
+                iconType={isDarkTheme ? 'moon' : 'sun'}
                 size="s"
                 color="ghost"
-                aria-label="theme-button-dark"
+                aria-label={isDarkTheme ? 'theme-button-light' : 'theme-button-dark'}
               />
-            )}
           </EuiFlexItem>
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
             <EuiButtonIcon
@@ -199,7 +194,7 @@ export default function Header() {
         sections={isResponsive ? responsiveSection : section}
       />
       <EuiHeader
-        style={{ minHeight: "8vh" }}
+        style={{ minHeight: "8vh", backgroundColor: "transparent", borderColor: "transparent" }}
         sections={[
           {
             breadcrumbs: breadCrumbs,
