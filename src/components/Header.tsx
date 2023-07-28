@@ -81,6 +81,7 @@ export default function Header() {
           {userName ? (
             <EuiText>
               <h4>
+                <EuiTextColor color="white">Welcome, </EuiTextColor>
                 <EuiTextColor color="#B36ED4">{userName}</EuiTextColor>
               </h4>
             </EuiText>
@@ -99,7 +100,7 @@ export default function Header() {
           <EuiFlexItem grow={false} style={{ flexBasis: "fit-content" }}>
               <EuiButtonIcon
                 onClick={invertTheme}
-                iconType={isDarkTheme ? 'sun' : 'moon'}
+                iconType={isDarkTheme ? 'moon' : 'sun'}
                 size="s"
                 color="ghost"
                 aria-label={isDarkTheme ? 'theme-button-light' : 'theme-button-dark'}
@@ -138,7 +139,6 @@ export default function Header() {
           {userName ? (
             <EuiText>
               <h3>
-                <EuiTextColor color="white">Welcome, </EuiTextColor>
                 <EuiTextColor color="#B36ED4">{userName}</EuiTextColor>
               </h3>
             </EuiText>
