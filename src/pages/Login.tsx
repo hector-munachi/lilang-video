@@ -87,7 +87,7 @@ function Login() {
                 {showLogin ? <LoginForm /> : <SignUpForm />}
                 <EuiSpacer size="m" />
                 <EuiText>
-                  {showLogin ? "Already registered? " : "You need to register? "}
+                  {showLogin ? "You need to register? " : "Already registered? " }
                   <span
                     style={{ cursor: 'pointer', textDecoration: 'underline' }}
                     onClick={toggleForm}
