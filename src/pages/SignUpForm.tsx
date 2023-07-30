@@ -2,7 +2,6 @@ import {
   EuiButton,
   EuiFieldText,
   EuiForm,
-  EuiFormRow,
   EuiFieldPassword,
   EuiSpacer,
 } from "@elastic/eui";
