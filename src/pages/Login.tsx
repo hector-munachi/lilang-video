@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
 import {
   EuiButton,
   EuiFlexGroup,
@@ -11,8 +14,6 @@ import {
 } from "@elastic/eui";
 import logo from "../assets/lilang-logo.svg";
 import poster from "../assets/poster.png";
-
-import React from "react";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -25,6 +26,12 @@ import { setUser } from "../app/slices/AuthSlice";
 import { collection, query, where, addDoc, getDocs } from "firebase/firestore";
 
 function Login() {
+  const [showLogin, setShowLogin] = useState(true);
+
+  const toggleForm = () => {
+    setShowLogin((prevState) => !prevState);
+  };
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -63,9 +70,6 @@ function Login() {
           <EuiPanel paddingSize="xl">
             <EuiFlexGroup justifyContent="center" alignItems="center">
               <EuiFlexItem>
-                <EuiImage src={poster} alt="logo" style={{ width: "400px" }} />
-              </EuiFlexItem>
-              <EuiFlexItem>
               <EuiFlexGroup justifyContent="center" alignItems="center">
                 <img src={logo} alt="logo" style={{ width: "400px", height: "100px"}} />
                 </EuiFlexGroup>
@@ -75,6 +79,28 @@ function Login() {
                     <EuiTextColor color="#B36ED4">Learn Literature + Language</EuiTextColor>
                   </h3>
                 </EuiText>
+                <EuiImage src={poster} alt="logo" style={{ width: "400px" }} />
+              </EuiFlexItem>
+              <EuiFlexItem>
+             
+                <div>
+                {showLogin ? <LoginForm /> : <SignUpForm />}
+                <EuiSpacer size="m" />
+                <EuiText>
+                  {showLogin ? "Already registered? " : "You need to register? "}
+                  <span
+                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
+                    onClick={toggleForm}
+                  >
+                    here
+                  </span>
+                  .
+                </EuiText>
+                </div>
+                
+                <EuiSpacer size="l" />
+                <EuiText textAlign="center" color="#B36ED4">Or</EuiText>
+
                 <EuiSpacer size="l" />
                 <EuiButton fill onClick={login}>
                   Login with Google

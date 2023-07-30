@@ -4,7 +4,7 @@ import {
   EuiThemeProvider,
 } from "@elastic/eui";
 import { EuiThemeColorMode } from "@elastic/eui/src/services/theme";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { useAppSelector } from "./app/hooks";
