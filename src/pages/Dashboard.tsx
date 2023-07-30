@@ -39,7 +39,7 @@ function Dashboard() {
             <EuiCard
               icon={<EuiImage src={dashboard2} alt="icon" size="70%" />}
               title={`My Meetings`}
-              description="View your created meetings."
+              description="View your our created meetings."
               onClick={() => navigate("/mymeetings")}
               paddingSize="xl"
             />
@@ -48,7 +48,7 @@ function Dashboard() {
             <EuiCard
               icon={<EuiImage src={dashboard3} alt="icon" size="70%" />}
               title={`Invited Meetings`}
-              description="View the meetings that you are invited to."
+              description="Meetings that you are invited to."
               onClick={() => navigate("/meetings")}
               paddingSize="xl"
             />
