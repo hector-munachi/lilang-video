@@ -39,7 +39,7 @@ function Dashboard() {
             <EuiCard
               icon={<EuiImage src={dashboard2} alt="icon" size="70%" />}
               title={`My Meetings`}
-              description="View your our created meetings."
+              description="View your created meetings."
               onClick={() => navigate("/mymeetings")}
               paddingSize="xl"
             />
