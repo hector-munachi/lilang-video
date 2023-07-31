@@ -39,6 +39,7 @@ function Login() {
     if (currentUser) navigate("/");
   });
 
+
   const login = async () => {
     const provider = new GoogleAuthProvider();
     const {
