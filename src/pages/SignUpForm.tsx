@@ -94,7 +94,7 @@ const SignUpForm = () => {
           <EuiFieldPassword
             placeholder="Enter your password"
             aria-label="Enter your password."
-            type="password"
+            type="dual"
             value={password}
             onChange={handlePasswordChange}
             required

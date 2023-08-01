@@ -33,12 +33,6 @@ const LoginForm = () =>  {
     setPassword(e.target.value);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      loginWithEmail(email, password);
-    }
-  };
-
   const handleEmailBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
@@ -87,6 +81,7 @@ const LoginForm = () =>  {
             value={email}
             onChange={handleEmailChange}
             onBlur={handleEmailBlur}
+            required
           />
          <EuiSpacer size="m" />
           <EuiFieldPassword
@@ -96,7 +91,7 @@ const LoginForm = () =>  {
             value={password}
             onChange={handlePasswordChange}
             onBlur={handlePasswordBlur}
-            onKeyPress={handleKeyPress}
+            required
           />
            <EuiSpacer size="m" />
         <EuiButton type="submit" fill style={{width: "100%"}}>
