@@ -16,9 +16,18 @@ import { setUser } from "../app/slices/AuthSlice";
 import { collection, query, where, addDoc, getDocs } from "firebase/firestore";
 
 
+
+// Create a type for the Firebase Auth error
+interface FirebaseAuthError {
+  code: string;
+  message: string;
+  // You can add more properties if needed
+}
+
 const LoginForm = () =>  {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -64,8 +73,15 @@ const LoginForm = () =>  {
         dispatch(setUser({ uid, email: userEmail, name: displayName! }));
         navigate("/");
       }
-    } catch (error) {
-      console.log(error);
+    }catch (error: FirebaseAuthError | any) { // Specify FirebaseAuthError type
+      // Handle specific errors and set appropriate error message
+      if (error.code === "auth/invalid-email" || error.code === "auth/wrong-password") {
+        setError("Invalid credentials. Please check your email and password.");
+      } else if (error.code === "auth/user-not-found") {
+        setError("User does not exist. Please sign up first.");
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
     }
   }
 
@@ -98,6 +114,7 @@ const LoginForm = () =>  {
           Submit
         </EuiButton>
       </EuiForm>
+      {error && <div style={{ color: "red" }}>{error}</div>} 
     </div>
   )
 }
