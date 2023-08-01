@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface authInitialState {
+export interface authInitialState {
+  name: any;
   userInfo:
     | undefined
     | {
@@ -14,13 +15,14 @@ interface authInitialState {
 const initialState: authInitialState = {
   userInfo: undefined,
   isDarkTheme: false,
+  name: undefined
 };
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    changeTheme: (state, action) => {
+    changeTheme: (state, action: PayloadAction<authInitialState>) => {
       state.isDarkTheme = action.payload.isDarkTheme;
     },
     setUser: (

@@ -72,7 +72,7 @@ function Login() {
             <EuiFlexGroup justifyContent="center" alignItems="center">
               <EuiFlexItem>
               <EuiFlexGroup justifyContent="center" alignItems="center">
-                <img src={logo} alt="logo" style={{ width: "400px", height: "100px"}} />
+                <img src={logo} alt="logo" style={{ width: "300px", height: "80px"}} />
                 </EuiFlexGroup>
                 <EuiSpacer size="xs" />
                 <EuiText textAlign="center" grow={false}>
@@ -80,7 +80,7 @@ function Login() {
                     <EuiTextColor color="#B36ED4">Learn Literature + Language</EuiTextColor>
                   </h3>
                 </EuiText>
-                <EuiImage src={poster} alt="logo" style={{ width: "400px" }} />
+                <EuiImage src={poster} alt="logo" style={{ width: "300px" }} />
               </EuiFlexItem>
               <EuiFlexItem>
              

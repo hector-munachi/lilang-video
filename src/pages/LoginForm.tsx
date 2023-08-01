@@ -7,7 +7,7 @@ import {
   EuiFieldPassword,
 } from "@elastic/eui";
 import {
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { firebaseAuth, firebaseDB, usersRef } from "../utils/firebaseConfig";
 import { useNavigate } from "react-router-dom";

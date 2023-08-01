@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../app/hooks";
-import { changeTheme } from "../app/slices/AuthSlice";
+import { changeTheme, authInitialState } from "../app/slices/AuthSlice";
 import {
   getCreateMeetingBreadCrumbs,
   getDashboardBreadCrumbs,
@@ -23,6 +23,7 @@ import {
 import { firebaseAuth } from "../utils/firebaseConfig";
 import { BreadCrumbsType } from "../utils/types";
 import logo from "../assets/lilang-logo.svg"
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -36,6 +37,10 @@ export default function Header() {
   ]);
   const dispatch = useDispatch();
   const [isResponsive, setIsResponsive] = useState(false);
+  const userState: authInitialState | undefined = useSelector((state: authInitialState) => state); // Use the AuthState type here
+
+  // Perform null/undefined check before accessing the name property
+  const name = userState?.name;
 
   useEffect(() => {
     const { pathname } = location;
@@ -60,8 +65,14 @@ export default function Header() {
   const invertTheme = () => {
     const theme = localStorage.getItem("zoom-theme");
     localStorage.setItem("zoom-theme", theme === "dark" ? "light" : "dark");
-    dispatch(changeTheme({ isDarkTheme: !isDarkTheme }));
+    dispatch(changeTheme({
+      isDarkTheme: !isDarkTheme,
+      userInfo: undefined,
+      name: undefined
+    }));
   };
+
+  console.log()
 
   const section = [
     {
@@ -82,7 +93,7 @@ export default function Header() {
             <EuiText>
               <h4>
                 <EuiTextColor color="white">Welcome, </EuiTextColor>
-                <EuiTextColor color="#B36ED4">{userName}</EuiTextColor>
+                <EuiTextColor color="#B36ED4">{userName || name}</EuiTextColor>
               </h4>
             </EuiText>
           ) : null}
