@@ -17,12 +17,7 @@ import { collection, query, where, addDoc, getDocs } from "firebase/firestore";
 
 
 
-// Create a type for the Firebase Auth error
-interface FirebaseAuthError {
-  code: string;
-  message: string;
-  // You can add more properties if needed
-}
+
 
 const LoginForm = () =>  {
   const [email, setEmail] = useState("");
@@ -53,6 +48,14 @@ const LoginForm = () =>  {
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
+  // Create a type for the Firebase Auth error
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+interface FirebaseAuthError {
+  code: string;
+  message: string;
+  // You can add more properties if needed
+}
 
   const loginWithEmail = async (email: string, password: string) => {
     try {
