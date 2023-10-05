@@ -47,7 +47,7 @@ const SignUpForm = () => {
 
         let displayNameFromFirestore = "";
         if (fetchedUser.docs.length === 0) {
-          displayNameFromFirestore = displayName || name; // If displayName is not available, use the name from the form
+          displayNameFromFirestore = displayName ?? name; // If displayName is not available, use the name from the form
           await addDoc(collection(firebaseDB, "users"), {
             uid,
             name: displayNameFromFirestore,
