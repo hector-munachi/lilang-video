@@ -25,6 +25,7 @@ export default function App() {
   const [isInitialEffect, setIsInitialEffect] = useState(true);
   const toasts = useAppSelector((zoom) => zoom.meetings.toasts);
 
+
   const removeToast = (removedToast: { id: string }) => {
     dispatch(
       setToasts(

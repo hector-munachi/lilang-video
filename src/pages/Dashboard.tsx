@@ -6,6 +6,7 @@ import dashboard2 from "../assets/dashboard2.png";
 import dashboard3 from "../assets/dashboard3.png";
 import Header from "../components/Header";
 import useAuth from "../hooks/useAuth";
+import MiniNav from "../components/MiniNav";
 
 function Dashboard() {
   useAuth();
@@ -21,6 +22,7 @@ function Dashboard() {
         }}
       >
         <Header />
+        <MiniNav/>
         <EuiFlexGroup
           justifyContent="center"
           alignItems="center"
