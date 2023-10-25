@@ -6,6 +6,7 @@ import dashboard2 from "../assets/dashboard2.png";
 import dashboard3 from "../assets/dashboard3.png";
 import Header from "../components/Header";
 import useAuth from "../hooks/useAuth";
+import MiniNav from "../components/MiniNav";
 
 function Dashboard() {
   useAuth();
@@ -20,7 +21,8 @@ function Dashboard() {
           flexDirection: "column",
         }}
       >
-        <Header />
+      <Header />
+      <MiniNav />
         <EuiFlexGroup
           justifyContent="center"
           alignItems="center"
@@ -28,7 +30,7 @@ function Dashboard() {
         >
           <EuiFlexItem>
             <EuiCard
-              icon={<EuiImage src={dashboard1} alt="icon" size="70%" />}
+              icon={<EuiImage src={dashboard1} alt="icon" size="70%" style={{margin: "auto"}} />}
               title={`Create Meeting`}
               description="Create a new meeting and invite people."
               onClick={() => navigate("/create")}
@@ -37,7 +39,7 @@ function Dashboard() {
           </EuiFlexItem>
           <EuiFlexItem>
             <EuiCard
-              icon={<EuiImage src={dashboard2} alt="icon" size="70%" />}
+              icon={<EuiImage src={dashboard2} alt="icon" size="70%" style={{margin: "auto"}} />}
               title={`My Meetings`}
               description="View your created meetings."
               onClick={() => navigate("/mymeetings")}
@@ -46,7 +48,7 @@ function Dashboard() {
           </EuiFlexItem>
           <EuiFlexItem>
             <EuiCard
-              icon={<EuiImage src={dashboard3} alt="icon" size="70%" />}
+              icon={<EuiImage src={dashboard3} alt="icon" size="70%" style={{margin: "auto"}} />}
               title={`Invited Meetings`}
               description="Meetings that you are invited to."
               onClick={() => navigate("/meetings")}

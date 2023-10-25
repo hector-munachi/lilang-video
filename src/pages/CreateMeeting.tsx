@@ -5,6 +5,7 @@ import meeting2 from "../assets/meeting2.png";
 
 import Header from "../components/Header";
 import useAuth from "../hooks/useAuth";
+import MiniNav from "../components/MiniNav";
 
 export default function CreateMeeting() {
   useAuth();
@@ -19,7 +20,8 @@ export default function CreateMeeting() {
           flexDirection: "column",
         }}
       >
-        <Header />
+         <Header />
+      <MiniNav />
         <EuiFlexGroup
           justifyContent="center"
           alignItems="center"
@@ -27,7 +29,7 @@ export default function CreateMeeting() {
         >
           <EuiFlexItem>
             <EuiCard
-              icon={<EuiImage src={meeting1} alt="icon" size="50%" />}
+              icon={<EuiImage src={meeting1} alt="icon" size="50%" style={{margin: "auto"}} />}
               title={`Create 1 on 1 Meeting`}
               description="Create a personal single person meeting."
               onClick={() => navigate("/create1on1")}
@@ -36,7 +38,7 @@ export default function CreateMeeting() {
           </EuiFlexItem>
           <EuiFlexItem>
             <EuiCard
-              icon={<EuiImage src={meeting2} alt="icon" size="50%" />}
+              icon={<EuiImage src={meeting2} alt="icon" size="50%" style={{margin: "auto"}} />}
               title={`Create Video Conference`}
               description="Invite multiple persons to the meeting."
               onClick={() => navigate("/videoconference")}

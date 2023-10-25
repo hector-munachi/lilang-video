@@ -18,6 +18,8 @@ import Meeting from "./pages/Meeting";
 import MyMeetings from "./pages/MyMeetings";
 import OneOnOneMeeting from "./pages/OneOnOneMeeting";
 import VideoConference from "./pages/VideoConference";
+import Flashcards from "./pages/Flashcards";
+import QuizMain from "./pages/QuizMain";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -58,6 +60,7 @@ export default function App() {
     },
   };
 
+
   return (
     <ThemeSelector>
       <EuiProvider colorMode={theme}>
@@ -70,6 +73,8 @@ export default function App() {
             <Route path="/mymeetings" element={<MyMeetings />} />
             <Route path="/join/:id" element={<JoinMeeting />} />
             <Route path="/meetings" element={<Meeting />} />
+            <Route path="/flashcards" element={<Flashcards />} />
+            <Route path="/quizmain" element={<QuizMain/>} />
             <Route path="/" element={<Dashboard />} />
             <Route path="*" element={<Login />} />
           </Routes>

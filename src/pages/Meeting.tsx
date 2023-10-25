@@ -18,6 +18,7 @@ import useAuth from "../hooks/useAuth";
 
 import { meetingsRef } from "../utils/firebaseConfig";
 import { MeetingType } from "../utils/types";
+import MiniNav from "../components/MiniNav";
 
 export default function Meeting() {
   useAuth();
@@ -124,6 +125,7 @@ export default function Meeting() {
       }}
     >
       <Header />
+      <MiniNav />
       <EuiFlexGroup justifyContent="center" style={{ margin: "1rem" }}>
         <EuiFlexItem>
           <EuiPanel>

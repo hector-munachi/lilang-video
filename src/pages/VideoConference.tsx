@@ -23,6 +23,7 @@ import useToast from "../hooks/useToast";
 import { meetingsRef } from "../utils/firebaseConfig";
 import { generateMeetingID } from "../utils/generateMeetingId";
 import { FieldErrorType, UserType } from "../utils/types";
+import MiniNav from "../components/MiniNav";
 
 export default function VideoConference() {
   useAuth();
@@ -110,7 +111,8 @@ export default function VideoConference() {
         flexDirection: "column",
       }}
     >
-      <Header />
+       <Header />
+      <MiniNav />
       <EuiFlexGroup justifyContent="center" alignItems="center">
         <EuiForm>
           <EuiFormRow display="columnCompressedSwitch" label="Anyone can Join" >

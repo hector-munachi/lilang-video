@@ -16,6 +16,7 @@ import useToast from "../hooks/useToast";
 import { meetingsRef } from "../utils/firebaseConfig";
 import { generateMeetingID } from "../utils/generateMeetingId";
 import { FieldErrorType, UserType } from "../utils/types";
+import MiniNav from "../components/MiniNav";
 
 export default function OneOnOneMeeting() {
   useAuth();
@@ -98,6 +99,7 @@ export default function OneOnOneMeeting() {
       }}
     >
       <Header />
+      <MiniNav />
       <EuiFlexGroup justifyContent="center" alignItems="center">
         <EuiForm>
           <MeetingNameField
